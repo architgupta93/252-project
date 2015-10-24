@@ -2,15 +2,13 @@
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\lipsum[1-3] % Dummy text
+\par{Graphics processor units are now being extensively used for scientific computation because of tha availability of a large number of parallel resources. However, since the shader cores were not originally designed for general purpose computing, they perform poorly on code with a significant amount of control flow.}
 
-\begin{align}
-A = 
-\begin{bmatrix}
-A_{11} & A_{21} \\
-A_{21} & A_{22}
-\end{bmatrix}
-\end{align}
+\par{Additionally, unlike vector processors, most GPUs do not have a tightly coupled scalar core. So, in order to map a general scientic problem to a GPU, the scalar part of the program can be processed in one of the two ways:}
 
-\lipsum[4] % Dummy text
+\begin{enumerate}
+	\item Processing the scalar part of the program on the CPU and the parallel part on the GPU. 
+	\item Serial code can be executed on the GPU as part of the execution kernel.
+\end{enumerate} 
 
+While the former method involves significant amount of data movement (owing to the fact that the CPU and GPU have seperate memory sub-systems, the latter approach causes the inclusion of a significant amount of control flow to the existing kernels.

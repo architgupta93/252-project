@@ -1,0 +1,7 @@
+%----------------------------------------------------------------------------------------
+%	LOGISTICS AND INFRASTRUCTURE
+%----------------------------------------------------------------------------------------
+
+\par{In order to classify the branches in a GPU code, we intend to use GPGPU-SIM\ref{gpgpu-sim}, which accurately simulates the execution of a GPU. We use the PARBOIL benchmark suite\ref{parboil-becnhmark-suite}. The suite represents a variety of scientific applications which are commonly accelerated using GPUs today. Besides the diversity of applications in the suite, it also provides us with \textit{base} implementations of the same algorithms (which are CPU implementations) that help us identify the branches that are inherently intrinsic to a program.}
+
+	\par{In order to expand the set of applications (if required), we can also evaluate Rodinia benchmark suite\ref{rodinia-benchmark-suite}. This, however, does not come with a \textit{base} implementation of each of the algorithms, so, it would require manual identification of branches.}

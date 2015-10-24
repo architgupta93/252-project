@@ -1,0 +1,12 @@
+%----------------------------------------------------------------------------------------
+%	MOTIVATION
+%----------------------------------------------------------------------------------------
+
+\begin{figure}
+	\lstinputlisting{bfs_kernel.cu}
+	\caption{Code snippet from an implementation of Breadth first search algorithm in CUDA \label{fig:bfs-kernel}}
+\end{figure}
+
+\par{Figure \ref{fig:bfs-kernel} shows a code-snippet of the breadth first search (bfs) algorithm from the parnoil benchmark suite. One can see that the actual algorithm involves only the \textit{visit\_node} function to be called for each node in the graph in some order. However, in order to map the code to a GPU, additional code has been added. This adds a significant amount of control flow to the program.}
+
+\par{More importantly, the behavior of branches in this part of the program is significantly different from the branches that are intrinsic to BFS. If these branches contribute significantly to the performance degradation, we can easily come up with solutions specific to these branches which can, in turn, significantly improve the performance of the GPU}
