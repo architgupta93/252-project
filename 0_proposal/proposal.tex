@@ -61,12 +61,16 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{titling} % Allows custom title configuration
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{20}{20}%
+      \selectfont}
 
 \newcommand{\HorRule}{\color{DarkGoldenrod} \rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
 
 \pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{50}{50} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont} % Horizontal rule before the title
 
-\title{Characterizing performance loss due to mapping General Purpose programs onto GPU Architectures.} % Your article title
+\title{\TitleFont{Characterizing performance loss due to mapping General Purpose programs onto GPU Architectures.}} % Your article title
 
 \posttitle{\par\end{flushleft}\vskip 0.5em} % Whitespace under the title
 

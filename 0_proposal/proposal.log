@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.24)  24 OCT 2015 21:14
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 16:20
 >>>>>>> fb301c33e587181512709227f1ad4ed2a305dff4
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 16:32
+>>>>>>> 382508bd9429abf43555522154e47e1224366b4b
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,21 +384,21 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 ) (./proposal.aux)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Info: Redefining \microtypecontext on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Info: Redefining \microtypecontext on input line 90.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -429,8 +433,8 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count128
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 86.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 88.
+(lastpage)             ! on input line 90.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 92.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
@@ -443,22 +447,11 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 )
-(./introduction.tex
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 10.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-
-]) (./motivation.tex
-(./bfs_kernel.cu
+(./introduction.tex) (./motivation.tex (./bfs_kernel.cu
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -475,57 +468,44 @@ Underfull \hbox (badness 1132) in paragraph at lines 7--7
 [][]|\OT1/cmr/m/it/10 (+20) Code snip-pet from an im-ple-men-ta-tion of
  []
 
-) (./problem-statement.tex
+) (./problem-statement.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+}
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 15.
 
-[2]) (./related-work-approach.tex) (./approach.tex) (./logistics-infra.tex
+
+]) (./related-work-approach.tex) (./approach.tex [2]) (./logistics-infra.tex
 
 LaTeX Warning: Reference `parboil-benchmark-suite' on page 3 undefined on input
  line 5.
 
 
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 7.
+LaTeX Warning: Reference `gpgpu-sim' on page 3 undefined on input line 9.
 
 [3]
-
-LaTeX Warning: Reference `gpgpu-sim' on page 4 undefined on input line 9.
-
 
 LaTeX Warning: Reference `rodinia-benchmark-suite' on page 4 undefined on input
  line 16.
 
-) (./bibliography.tex
-Underfull \vbox (badness 3612) has occurred while \output is active []
-
-)
-
-Package lastpage Warning: Rerun to get the references right on input line 147.
-
-
+) (./bibliography.tex) 
 AED: lastpage setting LastPage
+[4
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 147.
-
-[4] (./proposal.aux)
+] (./proposal.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 9180 strings out of 493089
- 142220 string characters out of 6140694
- 429421 words of memory out of 5000000
- 12454 multiletter control sequences out of 15000+600000
- 18989 words of font info for 85 fonts, out of 8000000 for 9000
+ 9182 strings out of 493089
+ 142260 string characters out of 6140694
+ 426504 words of memory out of 5000000
+ 12457 multiletter control sequences out of 15000+600000
+ 18204 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,47p,923b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+ts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/
@@ -533,10 +513,10 @@ public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
 r/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (4 pages, 131884 bytes).
+Output written on proposal.pdf (4 pages, 135316 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21505 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 22017 words of extra memory for PDF output out of 24883 (max. 10000000)
 
