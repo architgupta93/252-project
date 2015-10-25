@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.24)  24 OCT 2015 21:14
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 16:20
->>>>>>> fb301c33e587181512709227f1ad4ed2a305dff4
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 16:32
->>>>>>> 382508bd9429abf43555522154e47e1224366b4b
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,13 +488,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9182 strings out of 493089
- 142260 string characters out of 6140694
- 426504 words of memory out of 5000000
+ 9184 strings out of 493089
+ 142276 string characters out of 6140694
+ 425504 words of memory out of 5000000
  12457 multiletter control sequences out of 15000+600000
- 18204 words of font info for 85 fonts, out of 8000000 for 9000
+ 18255 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,47p,923b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,47p,903b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -513,7 +505,7 @@ public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
 r/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (4 pages, 135316 bytes).
+Output written on proposal.pdf (4 pages, 135210 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
