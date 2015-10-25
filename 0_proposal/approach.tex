@@ -7,10 +7,10 @@ Any code for an algorithm assumes a hardware implementation which in turn determ
 }
 
 \par{
-Some branches are the result of mapping an algorithm onto a hardware which is not optimized for its execution. These branches will be called \textbf{extrinsic} branches. For instance, in a graphical processing routine increasing brightness of a picture by a constant value, loops must be included in CPU code which cycles through all the pixels in the picture and increases its brightness. The branches due to such loops are extrinsic branches, present only because of mapping on a CPU. GPU code of general purpose programs may have extrinsic branches, such as <TODO: INCLUDE EXAMPLE HERE>.  
+Some branches are the result of mapping an algorithm onto a hardware which is not optimized for its execution. These branches will be called \textbf{extrinsic} branches. For instance, in a graphical processing routine increasing brightness of a picture by a constant value, loops must be included in CPU code which cycles through all the pixels in the picture and increases its brightness. The branches due to such loops are extrinsic branches, present only because of mapping on a CPU. GPU code of general purpose programs may also have extrinsic branches, as <TODO: VERIFY> described in the Motivation section.  
 } 
 
-\par{Our approachs is organized as the following \textbf{milestones} towards achieveing the objective of the project:}
+\par{Our approachs is organized as \textbf{milestones} towards achieveing the objective of the project:}
 
 \begin{itemize}
 
