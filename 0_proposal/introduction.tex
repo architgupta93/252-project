@@ -2,13 +2,16 @@
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\par{Graphics processor units are now being extensively used for scientific computation because of tha availability of a large number of parallel resources. However, since the shader cores were not originally designed for general purpose computing, they perform poorly on code with a significant amount of control flow.}
+\par{Graphics Processing Units (GPUs) are increasingly used for scientific and other compute-intensive tasks. Owing to the availability of a large number of parallel resources (shader pipelines) originally built to execute graphics programs, they can achieve orders of magnitude higher performance on certain data-parallel applications than a conventional CPU. And unlike Vector processors they are cheaper, less power consuming and easily implemented on mobile platforms.
+}
 
-\par{Additionally, unlike vector processors, most GPUs do not have a tightly coupled scalar core. So, in order to map a general scientic problem to a GPU, the scalar part of the program can be processed in one of the two ways:}
+\par{
+However, since the shader cores were not designed for general purpose computing, there is a performance loss due to a significant amount of control flow. Additionally, unlike vector processors, most GPUs do not have a tightly coupled scalar core. Hence, in order to map a general or scientic problem on a GPU architecture, the scalar part of the program can be processed in either of the two ways:}
 
 \begin{enumerate}
-	\item Processing the scalar part of the program on the CPU and the parallel part on the GPU. 
-	\item Serial code can be executed on the GPU as part of the execution kernel.
+	\item the scalar part of the program is executed on the CPU and the parallel part on the GPU in a General Purpose GPU (GPGPU) system, or 
+	\item the scalar (serial) code is executed on the GPU as part of the execution kernel thereby under-utilizing the parallel hardware avaliable.
 \end{enumerate} 
 
-While the former method involves significant amount of data movement (owing to the fact that the CPU and GPU have seperate memory sub-systems, the latter approach causes the inclusion of a significant amount of control flow to the existing kernels.
+\par{
+While the former method involves significant data movement (the CPU and GPU have seperate memory sub-systems), the latter approach causes the inclusion of a significant amount of control flow to the existing kernels.}

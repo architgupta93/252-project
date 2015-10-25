@@ -1,0 +1,27 @@
+%----------------------------------------------------------------------------------------
+%	APPROACH	
+%----------------------------------------------------------------------------------------
+
+\par{
+Any code for an algorithm assumes a hardware implementation which in turn determines the control flow present. However, some control flow is inherent to the algorithm and cannot be eliminated by any practical hardware implementation. The branches associated with them will be called \textbf{intrinsic} branches. Intrinsic control flow may change in implementation according to the underlying hardware (<TODO: VERFIY> eg. switch-case statements for a CPU may change to thread-id-cases in GPU implementations). However, they cannot be eliminated completely and can at best be optimized for the native hardware.
+}
+
+\par{
+Some branches are the result of mapping an algorithm onto a hardware which is not optimized for its execution. These branches will be called \textbf{extrinsic} branches. For instance, in a graphical processing routine increasing brightness of a picture by a constant value, loops must be included in CPU code which cycles through all the pixels in the picture and increases its brightness. The branches due to such loops are extrinsic branches, present only because of mapping on a CPU. GPU code of general purpose programs may have extrinsic branches, such as <TODO: INCLUDE EXAMPLE HERE>.  
+} 
+
+\par{Our approachs is organized as the following \textbf{milestones} towards achieveing the objective of the project:}
+
+\begin{itemize}
+
+\item \textbf{Classifying Branches for each benchmark algorithm}. The first step will be to enumerate and classify branches in each GPU program into intrinsic and extrinsic branches. To do so, we first use a CPU code of the algorithm to identify intrinsic and extrinsic branches. It is relatively simple to identify extrinsic branches in CPU code as loops can be identified easily and are the most common(<TODO: only extrinsic?>) extrinsic branches present. Hence, the intrinsic branches of the CPU code are also calculated.
+\\
+It is assumed that the intrinsic branches map similarly to the GPU code. That is, the intrinsic control portion of the code maps to similar control structures to both CPU and GPU and therefore have same number of intrinsic branches. This assumption is reasonable as CUDA (the language used in benchmarks for GPU code) is very similar to C++ and most compiler optimizations that can be done in the non-parallelized code is the same (<TODO: is this reasoning correct?). Nevertheless, this assumption will be verified by examining the GPU and CPU code for the simpler algorithms (such as, <TODO: include examples here>) in the benchmark. Using this assumption, the extrinsic branches of the algorithms are also identified by enumerating all other branches in the GPU code.
+
+\item \textbf{Measuring Performance loss due to extrinsic branches in GPU code for each algorithm}. The GPU code is simulated in a simulator and the additional cycles due to the identified extrinsic branches is counted for each algorithm. These cycle losses are then compared with the total execution time. This will tell us if the losses due to extrinsic branches are significant and can be an important metric to judge suitability of current GPU architectures to run general programs.
+\\
+Moreover, the loss thus encountered in the GPU code will be compared with equivalent loss in the CPU code. The inter CPU -- GPU comparison will indicate whether the fractional cycle loss due to extrinsic branches (reduced by branch prediction) is better handled in CPU and may give us insights into improving GPU hardware. (<TODO: Is this even useful, as the number of cycles in a CPU will be very much larger due to looping, and moreover these are entirely differnt hardware paradigms.)
+
+\item \textbf{Proposing Hardware changes in GPU architectures to minimize the losses due to extrinsic branches}. If the losses found in the previous milestone is significant (for instance, more than 5\%) then any light hardware change that can partially mitigate such losses will be beneficial. We will explore different changes to the shader pipeline, taking hints from CPU and vector pipelines and the knowledge gained in class, to minimize the losses. Since this depends on the outcome of the second milestone, we cannot say much about our approach in this milestone apriori. 
+
+\end{itemize}
