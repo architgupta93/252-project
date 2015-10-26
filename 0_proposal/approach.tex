@@ -3,11 +3,11 @@
 %----------------------------------------------------------------------------------------
 
 \par{
-Any code for an algorithm assumes a hardware implementation which in turn determines the control flow present. However, some control flow is inherent to the algorithm and cannot be eliminated by any practical hardware implementation. The branches associated with them will be called \textbf{intrinsic} branches. Intrinsic control flow may change in implementation according to the underlying hardware (<TODO: VERFIY> eg. switch-case statements for a CPU may change to thread-id-cases in GPU implementations). However, they cannot be eliminated completely and can at best be optimized for the native hardware.
+The program for an algorithm assumes an implementation for the device running the program (CPU, GPU, SMT etc.), which in turn determines the control flow present. However, some control flow is inherent to the algorithm and cannot be eliminated by any practical hardware implementation. The branches associated with them will be called \textbf{intrinsic} branches.
 }
 
 \par{
-Some branches are the result of mapping an algorithm onto a hardware which is not optimized for its execution. These branches will be called \textbf{extrinsic} branches. For instance, in a graphical processing routine increasing brightness of a picture by a constant value, loops must be included in CPU code which cycles through all the pixels in the picture and increases its brightness. The branches due to such loops are extrinsic branches, present only because of mapping on a CPU. GPU code of general purpose programs may also have extrinsic branches, as <TODO: VERIFY> described in the Motivation section.  
+Some branches are the result of mapping an algorithm onto a different hardware . These branches will be called \textbf{extrinsic} branches. For instance, in a graphical processing routine increasing brightness of a picture, loops must be included in CPU code which cycles through all the pixels. The branches due to such loops are extrinsic, present only because of mapping onto CPU. GPU code of general purpose programs may also have extrinsic branches, as described in Section \ref{sec:motivation}  
 } 
 
 \par{Our approachs is organized as \textbf{milestones} towards achieveing the objective of the project:}
