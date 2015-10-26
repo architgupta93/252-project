@@ -14,14 +14,12 @@ Some branches are the result of mapping an algorithm onto a specific hardware . 
 
 \begin{itemize}
 
-\item \textbf{Classifying Branches for each benchmark algorithm}. we first enumerate and classify branches in each GPU program. We use CPU code of the algorithm to identify intrinsic branches. It is relatively simple to identify intrinsic branches in CPU code as loops can be identified easily and are the most common extrinsic branches present.
+\item \textbf{Classifying Branches for each benchmark algorithm}. We first enumerate and classify branches in each GPU program. The CPU code of the algorithm is used to identify intrinsic branches. It is relatively simple to identify intrinsic branches in CPU code as loops can be identified easily and are the most common extrinsic branches present.
 \\
 It is assumed that the intrinsic branches map similarly to the GPU code. That is, the intrinsic control portion of the code maps to similar control structures to both CPU and GPU. Using this assumption, the extrinsic branches of the algorithms are also identified by enumerating all other branches in the GPU code.
 
 \item \textbf{Measuring Performance loss due to extrinsic branches in GPU code for each algorithm}. The GPU code is simulated in a simulator and the additional cycles due to the identified extrinsic branches is counted for each algorithm. These cycle losses are then compared with the total execution time. This will tell us if the losses due to extrinsic branches are significant and can be an important metric to judge suitability of current GPU architectures to run general programs.
-\\
-Moreover, the loss thus encountered in the GPU code will be compared with equivalent loss in the CPU code. The inter CPU -- GPU comparison will indicate whether the fractional cycle loss due to extrinsic branches (reduced by branch prediction) is better handled in CPU and may give us insights into improving GPU hardware. (<TODO: Is this even useful, as the number of cycles in a CPU will be very much larger due to looping, and moreover these are entirely differnt hardware paradigms.)
 
-\item \textbf{Proposing Hardware changes in GPU architectures to minimize the losses due to extrinsic branches}. If the losses found in the previous milestone is significant (for instance, more than 5\%) then any light hardware change that can partially mitigate such losses will be beneficial. We will explore different changes to the shader pipeline, taking hints from CPU and vector pipelines and the knowledge gained in class, to minimize the losses. Since this depends on the outcome of the second milestone, we cannot say much about our approach in this milestone apriori. 
+\item \textbf{Proposing Hardware changes in GPU architectures to minimize the losses due to extrinsic branches}. If the losses found in the previous milestone are significant (for instance, more than 5\%) then any light hardware change that can partially mitigate such losses will be beneficial. We will explore different changes to the shader pipeline, taking hints from CPU and vector pipelines and the knowledge gained in class, to minimize the losses. Since this depends on the outcome of the second milestone, we cannot say much about our approach in this milestone apriori. 
 
 \end{itemize}
