@@ -14,11 +14,11 @@ Some branches are the result of mapping an algorithm onto a specific hardware . 
 
 \begin{itemize}
 
-\item \textbf{Classifying Branches for each benchmark algorithm}. The CPU code of the algorithm is first used to identify intrinsic branches. It is relatively simple to identify intrinsic branches in CPU code as loops can be identified easily and are the most common extrinsic branches present.
+\item \textbf{Classifying Branches for each benchmark algorithm}. The high level CPU code of the algorithm is first used to identify intrinsic control. It is easier to do the same for CPU code as loops can be identified easily and are the most common extrinsic control present.
 \\
-It is assumed that the intrinsic branches map similarly to the GPU code. That is, the intrinsic control portion of the code maps to similar control structures to both CPU and GPU. Using this assumption, the extrinsic branches of the algorithms are also identified by enumerating all other branches in the GPU code.
+It is assumed that the intrinsic control is same in high-level GPU code. That is, the intrinsic control portion of the code maps to similar control structures for both CPU and GPU. Using this assumption, we identify extrinsic control in the GPU code. Finally, we will trace this high-level extrinsic segment in the compiled assembly code to branches or predicated instructions.
 
-\item \textbf{Measuring Performance loss due to extrinsic branches in GPU code for each algorithm}. The GPU code is simulated in a simulator and the additional cycles due to the identified extrinsic branches is counted for each algorithm. These cycle losses are then compared with the total execution time. This will tell us if the losses due to extrinsic branches are significant and can be an important metric to judge suitability of current GPU architectures to run general programs.
+\item \textbf{Measuring Performance loss due to extrinsic branches in GPU code for each algorithm}. The GPU code is simulated and the additional cycles due to the identified extrinsic branches is counted for each algorithm. These cycle losses are then compared with the total execution time. We also trace intrinsic segments to low-level branches on both CPU and GPU and compare their simulated behavior to test our assumption that the intrinsic control flow is similar for both the mappings. 
 
 \item \textbf{Proposing Hardware changes in GPU architectures to minimize the losses due to extrinsic branches}. If the losses found in the previous milestone are significant (for instance, more than 5\%) then any light hardware change that can partially mitigate such losses will be beneficial. We will explore different changes to the shader pipeline, taking hints from CPU and vector pipelines and the knowledge gained in class, to minimize the losses. Since this depends on the outcome of the second milestone, we cannot say much about our approach in this milestone apriori. 
 
