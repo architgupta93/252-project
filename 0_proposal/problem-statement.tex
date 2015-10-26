@@ -5,11 +5,9 @@
 \par{
 This project studies the performance loss due to execution of scientific and general purpose data-parallel applications on GPUs, and attempts to propose architectural changes to the GPU to mitigate such losses if they are significant.}
 
-\par{\textbf{Performance loss} refers to the number of cycles added due to control flow in the parallel code as a result of mapping a non-graphical application on a Graphical Processing Unit. Another way to interpret it is that the performance loss equals the number of cycles taken to execute a parallel code of the application on the GPU less the number of cycles required to execute an equivalent graphical application of similar length on the GPU. Parallel code refers to a native assembly language code optimized to execute the general purpose application on a GPU.
-}
+\par{\textbf{Performance loss} is defined as the number of cycles added due to control flow in the parallel code as a result of mapping a non-graphical application on a Graphical Processing Unit. The project contains two distinct objectives:}
 
-As such, the project contains two distinct objectives:
 \begin{itemize}
-\item \textbf{Characterize performance losses}: To measure the performance loss in various representative algorithms of general-purpose data-parallel workloads by simulating its execution on a modern GPU architecture. It is important that the workload represented have enough Data-level Parallelism (DLP) to get significant speedup (relative to CPU) when executing on parallel hardware, and be general enough for execution on other hardware implementations such as CPUs or Vector machines. 
-\item \textbf{Propose architectural changes}: If the losses from the collective measurements turn out to be significant, then various architectural solutions will be explored which can (partially) reduce such losses. The proposal will be studied and the resulting reduction of losses will be measured along with any changes in general timing characteristics or power consumption in the machine.
+\item \textbf{Characterizing performance losses}: To measure the performance loss in various representative algorithms of general-purpose data-parallel workloads by simulating its execution on a modern GPU architecture.  
+\item \textbf{Propose architectural changes}: If collective losses turn out to be significant, then various architectural solutions can be explored which can potentially reduce them. The proposals will also be evaluated on timing characteristics or power consumption.
 \end{itemize}
