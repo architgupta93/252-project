@@ -14,7 +14,7 @@ Some branches are the result of mapping an algorithm onto a specific hardware . 
 
 \begin{itemize}
 
-\item \textbf{Classifying Branches for each benchmark algorithm}. We first enumerate and classify branches in each GPU program. The CPU code of the algorithm is used to identify intrinsic branches. It is relatively simple to identify intrinsic branches in CPU code as loops can be identified easily and are the most common extrinsic branches present.
+\item \textbf{Classifying Branches for each benchmark algorithm}. The CPU code of the algorithm is first used to identify intrinsic branches. It is relatively simple to identify intrinsic branches in CPU code as loops can be identified easily and are the most common extrinsic branches present.
 \\
 It is assumed that the intrinsic branches map similarly to the GPU code. That is, the intrinsic control portion of the code maps to similar control structures to both CPU and GPU. Using this assumption, the extrinsic branches of the algorithms are also identified by enumerating all other branches in the GPU code.
 

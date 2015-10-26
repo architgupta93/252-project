@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,16 +476,18 @@ LaTeX Warning: Reference `parboil-benchmark-suite' on page 2 undefined on input
 LaTeX Warning: Reference `gpgpu-sim' on page 3 undefined on input line 9.
 
 
+LaTeX Warning: Reference `sesc-simulator' on page 3 undefined on input line 13.
+
+
+
 LaTeX Warning: Reference `rodinia-benchmark-suite' on page 3 undefined on input
  line 16.
 
-) (./bibliography.tex
-Underfull \vbox (badness 3612) has occurred while \output is active []
-
-)
-
+) (./bibliography.tex) 
 AED: lastpage setting LastPage
-[3] (./proposal.aux)
+[3
+
+] (./proposal.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -495,11 +497,11 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9189 strings out of 493089
- 142322 string characters out of 6140694
+ 9186 strings out of 493089
+ 142308 string characters out of 6140694
  420512 words of memory out of 5000000
- 12458 multiletter control sequences out of 15000+600000
- 18357 words of font info for 88 fonts, out of 8000000 for 9000
+ 12459 multiletter control sequences out of 15000+600000
+ 18255 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,47p,903b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
@@ -512,7 +514,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/u
 hvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/sha
 re/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (3 pages, 131991 bytes).
+Output written on proposal.pdf (3 pages, 131190 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream

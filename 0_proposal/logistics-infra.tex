@@ -2,15 +2,15 @@
 %	LOGISTICS AND INFRASTRUCTURE
 %----------------------------------------------------------------------------------------
 \par{
-In this project, the primary infrastructure is the benchmark suite that represents the general body of algorithms commonly used in both data parallel architectures like GPUs and vector processors, as well as in modern Our-of-order processors. We chose the PARBOIL Benchmark Suite \ref{parboil-benchmark-suite} developed by the IMPACT research group at UIUC. It has a selection of algorithms widely used in throughput oriented programs in different scientific and commercial applications. The suite comes with a base code as well as optimized CUDA code for GPUs, which is ideal for our purpose of comparing performance loss due to extrinsic branches for each representative algorithm when mapped to GPUs versus to CPUs.
+We chose the PARBOIL Benchmark Suite \ref{parboil-benchmark-suite}, which has a selection of algorithms widely used in throughput oriented programs in different scientific and commercial applications. The suite comes with a base code as well as optimized CUDA code for GPUs, which is ideal for our purpose.
 }
 
 \par{
-We also need simulators for emulating the a modern Out-of-Order superscalar CPU and a General Purpose GPU. For emulating GPUs we chose GPGPU-Sim\ref{gpgpu-sim}, an open-source GPU simulator developed at UBC by Tom Aamodt. This simulator is very flexible in the types of GPU architectures it can simulate, and is quite accurate in predicting performance of benchmark suites. It now includes an integrated energy model GPUWattch, which has been validated by measuring power characteristics of two contemporary GPUs. The error in energy predictions is close to 10\%, which is acceptable for the first-order approximations. We plan to use GPUWattch to predict power consumption due to our proposed architectural changes.
+For emulating GPUs we chose GPGPU-Sim\ref{gpgpu-sim}. This simulator now includes an integrated energy model GPUWattch, which has been validated by measuring power characteristics of two contemporary GPUs. We plan to use GPUWattch to predict power consumption due to our proposed architectural changes.
 }
 
 \par{
-For simulating the execution of a modern CPU we chose SESC (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC. It models a fully out-of-order complete with branch prediction, caches, and buses.
+For simulating the execution of a modern CPU we chose SESC\ref{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC. It models a fully out-of-order complete with branch prediction, caches, and buses.
 }
 
 \par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. For example, we could evaluate programs supplied by the Rodinia Benchmark Suite\ref{rodinia-benchmark-suite} to diversify the representation of compute-intensive algorithms used in GPUs today. Using Rodinia, however, may require additional effort as it does not provide base implemenations optimized for CPUs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}
