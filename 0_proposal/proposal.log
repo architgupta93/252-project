@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,13 +434,12 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `phv' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (./abstract.tex
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-(./introduction.tex) (./motivation.tex (./bfs_kernel.cu
+ (./introduction.tex)
+(./motivation.tex (./bfs_kernel.cu
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
@@ -459,12 +458,12 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./problem-statement.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-}
+) (./problem-statement.tex) (./related-work-approach.tex) (./approach.tex
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
-]) (./related-work-approach.tex) (./approach.tex) (./logistics-infra.tex
+]) (./logistics-infra.tex
 
 LaTeX Warning: Reference `parboil-benchmark-suite' on page 2 undefined on input
  line 5.
@@ -497,29 +496,28 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9175 strings out of 493089
- 142158 string characters out of 6140694
- 421423 words of memory out of 5000000
- 12457 multiletter control sequences out of 15000+600000
- 17386 words of font info for 78 fonts, out of 8000000 for 9000
+ 9155 strings out of 493089
+ 141828 string characters out of 6140694
+ 422432 words of memory out of 5000000
+ 12446 multiletter control sequences out of 15000+600000
+ 16049 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,47p,903b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,47p,856b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 mi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-</usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-di
-st/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
-helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (2 pages, 147318 bytes).
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
+share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fo
+nts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on proposal.pdf (2 pages, 137655 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 22017 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 18433 words of extra memory for PDF output out of 20736 (max. 10000000)
 
