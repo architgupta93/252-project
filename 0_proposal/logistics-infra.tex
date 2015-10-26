@@ -10,14 +10,7 @@ For emulating GPUs we chose GPGPU-Sim\cite{gpgpu-sim}. This simulator now includ
 }
 
 \par{
-<<<<<<< HEAD
-For simulating the execution of a modern CPU we chose SESC\ref{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC.
+For simulating the execution of a modern CPU we chose SESC\cite{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC.
 }
 
-\par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. We could evaluate programs supplied by the Rodinia Benchmark Suite\ref{rodinia-benchmark-suite} to diversify the representation of programs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}
-=======
-For simulating the execution of a modern CPU we chose SESC\cite{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC. It models a fully out-of-order complete with branch prediction, caches, and buses.
-}
-
-\par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. For example, we could evaluate programs supplied by the Rodinia Benchmark Suite\cite{rodinia-benchmark-suite} to diversify the representation of compute-intensive algorithms used in GPUs today. Using Rodinia, however, may require additional effort as it does not provide base implemenations optimized for CPUs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}
->>>>>>> ba1e178d4fa549b8b1dd225c57e74d227b2d7a8d
+\par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. We could evaluate programs supplied by the Rodinia Benchmark Suite\cite{rodinia-benchmark-suite} to diversify the representation of programs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}

@@ -6,7 +6,4 @@
 }
 
 \par{
-However, since the shader cores were not designed for general purpose computing, there is performance loss due to a significant amount of control flow. Additionally, unlike vector processors, most GPUs do not have tightly coupled scalar core(s). Hence, in order to map general or scientic problems on a GPU architecture, the scalar part of the program can be processed in either of the two ways: (1) the scalar part is executed on the CPU and the parallel part on the GPU; or (2) the scalar (serial) code is executed on the GPU as part of the execution kernel thereby under-utilizing the parallel hardware avaliable.
- 
-\par{
-While the former method involves significant data movement (CPU and GPU have seperate memory sub-systems), the latter approach causes the inclusion of significant amount of control flow in existing kernels.}
+However, since the shader cores were not designed for general purpose computing, there is performance loss due to a significant amount of control flow. Additionally, unlike vector processors, most GPUs do not have tightly coupled scalar core(s). Hence, to map general problems on a GPU, the scalar portion of the program can be executed on: (1) the CPU, and the parallel part on the GPU (thereby limiting performance due to inter-system data movement); or (2) the GPU as part of the execution kernel thereby under-utilizing the parallel hardware avaliable. The latter approach causes the inclusion of significant amount of control flow in existing kernels. Our objective is to investigate their effects on overall performance.}
