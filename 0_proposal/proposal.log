@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,11 +465,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]) (./logistics-infra.tex
 
-LaTeX Warning: Reference `parboil-benchmark-suite' on page 2 undefined on input
- line 5.
-
-
-LaTeX Warning: Reference `gpgpu-sim' on page 2 undefined on input line 9.
+LaTeX Warning: Citation `gpgpu-sim' on page 2 undefined on input line 9.
 
 
 Underfull \hbox (badness 1337) in paragraph at lines 9--11
@@ -477,18 +473,20 @@ Underfull \hbox (badness 1337) in paragraph at lines 9--11
  []
 
 
-LaTeX Warning: Reference `sesc-simulator' on page 2 undefined on input line 13.
+LaTeX Warning: Citation `sesc-simulator' on page 2 undefined on input line 13.
 
 
+LaTeX Warning: Citation `rodinia-benchmark-suite' on page 2 undefined on input 
+line 16.
 
-LaTeX Warning: Reference `rodinia-benchmark-suite' on page 2 undefined on input
- line 16.
-
-) (./bibliography.tex) 
+) (./proposal.bbl) 
 AED: lastpage setting LastPage
 [2] (./proposal.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (\end occurred inside a group at level 1)
@@ -496,13 +494,13 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9155 strings out of 493089
- 141828 string characters out of 6140694
- 422432 words of memory out of 5000000
- 12446 multiletter control sequences out of 15000+600000
- 16049 words of font info for 72 fonts, out of 8000000 for 9000
+ 9151 strings out of 493089
+ 141760 string characters out of 6140694
+ 422409 words of memory out of 5000000
+ 12445 multiletter control sequences out of 15000+600000
+ 15890 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,47p,856b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,47p,857b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -514,7 +512,7 @@ ublic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
 share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (2 pages, 137655 bytes).
+Output written on proposal.pdf (2 pages, 142751 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

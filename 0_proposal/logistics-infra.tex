@@ -2,15 +2,15 @@
 %	LOGISTICS AND INFRASTRUCTURE
 %----------------------------------------------------------------------------------------
 \par{
-We chose the PARBOIL Benchmark Suite \ref{parboil-benchmark-suite}, which has a selection of algorithms widely used in throughput oriented programs in different scientific and commercial applications. The suite comes with a base code as well as optimized CUDA code for GPUs, which is ideal for our purpose.
+We chose the PARBOIL Benchmark Suite \cite{parboil-benchmark-suite}, which has a selection of algorithms widely used in throughput oriented programs in different scientific and commercial applications. The suite comes with a base code as well as optimized CUDA code for GPUs, which is ideal for our purpose.
 }
 
 \par{
-For emulating GPUs we chose GPGPU-Sim\ref{gpgpu-sim}. This simulator now includes an integrated energy model GPUWattch, which has been validated by measuring power characteristics of two contemporary GPUs. We plan to use GPUWattch to predict power consumption due to our proposed architectural changes.
+For emulating GPUs we chose GPGPU-Sim\cite{gpgpu-sim}. This simulator now includes an integrated energy model GPUWattch, which has been validated by measuring power characteristics of two contemporary GPUs. We plan to use GPUWattch to predict power consumption due to our proposed architectural changes.
 }
 
 \par{
-For simulating the execution of a modern CPU we chose SESC\ref{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC. It models a fully out-of-order complete with branch prediction, caches, and buses.
+For simulating the execution of a modern CPU we chose SESC\cite{sesc-simulator} (SuperESCalar Simulator), a widely used MIPS based microprocessor simulator developed by i-acoma group at UIUC. It models a fully out-of-order complete with branch prediction, caches, and buses.
 }
 
-\par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. For example, we could evaluate programs supplied by the Rodinia Benchmark Suite\ref{rodinia-benchmark-suite} to diversify the representation of compute-intensive algorithms used in GPUs today. Using Rodinia, however, may require additional effort as it does not provide base implemenations optimized for CPUs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}
+\par{We believe the above-stated infrastructure is sufficient for a basic study of the problem at hand. However, there is ample scope for expansion. For example, we could evaluate programs supplied by the Rodinia Benchmark Suite\cite{rodinia-benchmark-suite} to diversify the representation of compute-intensive algorithms used in GPUs today. Using Rodinia, however, may require additional effort as it does not provide base implemenations optimized for CPUs. Another possible direction might be to evaluate performance loss due to extrinsic branches in vector processors, and compare them to those in GPUs. Since both have similar philosophy in utilizing data-level parallelism, it will be interesting to see the differences in respective performance losses and the reasons behind them.}

@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{parboil-benchmark-suite}
+J.~A. Stratton, C.~Rodrigues, I.-J. Sung, N.~Obeid, L.-W. Chang, N.~Anssari,
+  G.~D. Liu, and W.-M.~W. Hwu, ``Parboil: A revised benchmark suite for
+  scientific and commercial throughput computing,'' {\em Center for Reliable
+  and High-Performance Computing}, 2012.
+
+\bibitem{rodinia-benchmark-suite}
+S.~Che, M.~Boyer, J.~Meng, D.~Tarjan, J.~W. Sheaffer, S.-H. Lee, and
+  K.~Skadron, ``Rodinia: A benchmark suite for heterogeneous computing,'' in
+  {\em Workload Characterization, 2009. IISWC 2009. IEEE International
+  Symposium on}, pp.~44--54, IEEE, 2009.
+
+\end{thebibliography}
