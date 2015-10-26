@@ -1,10 +1,32 @@
 \begin{thebibliography}{1}
 
+\bibitem{dynamic-warps}
+W.~W. Fung, I.~Sham, G.~Yuan, and T.~M. Aamodt, ``Dynamic warp formation and
+  scheduling for efficient gpu control flow,'' in {\em Proceedings of the 40th
+  Annual IEEE/ACM International Symposium on Microarchitecture}, pp.~407--420,
+  IEEE Computer Society, 2007.
+
+\bibitem{warp-scheduling}
+V.~Narasiman, M.~Shebanow, C.~J. Lee, R.~Miftakhutdinov, O.~Mutlu, and Y.~N.
+  Patt, ``Improving gpu performance via large warps and two-level warp
+  scheduling,'' in {\em Proceedings of the 44th Annual IEEE/ACM International
+  Symposium on Microarchitecture}, pp.~308--317, ACM, 2011.
+
 \bibitem{parboil-benchmark-suite}
 J.~A. Stratton, C.~Rodrigues, I.-J. Sung, N.~Obeid, L.-W. Chang, N.~Anssari,
   G.~D. Liu, and W.-M.~W. Hwu, ``Parboil: A revised benchmark suite for
   scientific and commercial throughput computing,'' {\em Center for Reliable
   and High-Performance Computing}, 2012.
+
+\bibitem{gpgpu-sim}
+A.~Bakhoda, G.~L. Yuan, W.~W. Fung, H.~Wong, and T.~M. Aamodt, ``Analyzing cuda
+  workloads using a detailed gpu simulator,'' in {\em Performance Analysis of
+  Systems and Software, 2009. ISPASS 2009. IEEE International Symposium on},
+  pp.~163--174, IEEE, 2009.
+
+\bibitem{sesc-simulator}
+P.~M. Ortego and P.~Sack, ``Sesc: Superescalar simulator,'' in {\em 17 th Euro
+  micro conference on real time systems (ECRTS\u201905)}, pp.~1--4, 2004.
 
 \bibitem{rodinia-benchmark-suite}
 S.~Che, M.~Boyer, J.~Meng, D.~Tarjan, J.~W. Sheaffer, S.-H. Lee, and

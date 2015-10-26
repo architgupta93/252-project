@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -458,58 +458,43 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./problem-statement.tex) (./related-work-approach.tex) (./approach.tex
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) (./problem-statement.tex) (./related-work-approach.tex) [1{/var/lib/texmf/fon
+ts/map/pdftex/updmap/pdftex.map}
 
 
 
-]) (./logistics-infra.tex
-
-LaTeX Warning: Citation `gpgpu-sim' on page 2 undefined on input line 9.
-
-
+] (./approach.tex) (./logistics-infra.tex
 Underfull \hbox (badness 1337) in paragraph at lines 9--11
 \OT1/cmr/m/n/10 (+20) sim-u-la-tor now in-cludes an in-te-grated en-ergy model
  []
 
-
-LaTeX Warning: Reference `sesc-simulator' on page 2 undefined on input line 14.
-
-
-
-LaTeX Warning: Reference `rodinia-benchmark-suite' on page 2 undefined on input
- line 17.
-
-
-LaTeX Warning: Citation `sesc-simulator' on page 2 undefined on input line 19.
-
 ) (./proposal.bbl) 
 AED: lastpage setting LastPage
-[2] (./proposal.aux)
+[2] (./proposal.aux) )
+(\end occurred inside a group at level 1)
 
-LaTeX Warning: There were undefined references.
-
- ) 
+### simple group (level 1) entered at line 8 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 9161 strings out of 493089
- 141857 string characters out of 6140694
- 422413 words of memory out of 5000000
+ 9163 strings out of 493089
+ 141870 string characters out of 6140694
+ 422429 words of memory out of 5000000
  12447 multiletter control sequences out of 15000+600000
- 16094 words of font info for 74 fonts, out of 8000000 for 9000
+ 16259 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,47p,857b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-</usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-di
-st/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
-helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (2 pages, 144099 bytes).
+ 42i,12n,47p,688b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
+share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fo
+nts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on proposal.pdf (2 pages, 147676 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
