@@ -5,7 +5,6 @@ BFS_kernel( ... )
     q.reset(threadIdx.x, blockDim);
   }
   __syncthreads();
-
   tid = blockIdx.x*THREADS_PER_BLOCK
 		...  + threadIdx.x;
   if( tid < no_of_nodes)
@@ -15,7 +14,6 @@ BFS_kernel( ... )
        	g_color, g_cost, gray_shade);
   }
   __syncthreads();
-
   if(threadIdx.x == 0){
     ...
     shift = atomicAdd(tail,tot_sum);
