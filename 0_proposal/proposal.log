@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -39,11 +39,11 @@ Package tocbasic Info: omitting babel extension for `lof'
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 124.
-Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
+Class scrartcl Info: File `scrsize10pt.clo' used to setup font sizes on input l
 ine 1942.
 
-(/usr/share/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2015/05/06 v3.17a KOMA-Script font size class option (11p
+(/usr/share/texmf-dist/tex/latex/koma-script/scrsize10pt.clo
+File: scrsize10pt.clo 2015/05/06 v3.17a KOMA-Script font size class option (10p
 t)
 )
 (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
@@ -62,27 +62,27 @@ Package typearea, 2015/05/06 v3.17a KOMA-Script package (type area)
 DIV calculation for typearea with good linewidth.
 
 Package typearea Warning: Maybe no optimal type area settings!
-(typearea)                The maximum limit of line width is about 29%
+(typearea)                The maximum limit of line width is about 21%
 (typearea)                larger than the heuristically detected line width.
 (typearea)                You may e.g. increase DIV, decrease fontsize
 (typearea)                or change the papersize.
 
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 19
+(typearea)             DIV  = 21
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 503.16458pt
-(typearea)              DIV departure   = 29%
-(typearea)              \evensidemargin = -25.09831pt
-(typearea)              \oddsidemargin  = -25.09831pt
+(typearea)              \textwidth      = 512.14966pt
+(typearea)              DIV departure   = 21%
+(typearea)              \evensidemargin = -29.59085pt
+(typearea)              \oddsidemargin  = -29.59085pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 718.20032pt
-(typearea)              \topmargin      = -65.19385pt
-(typearea)              \headheight     = 17.0pt
-(typearea)              \headsep        = 20.40001pt
-(typearea)              \topskip        = 11.0pt
-(typearea)              \footskip       = 47.6pt
-(typearea)              \baselineskip   = 13.6pt
+(typearea)              \textheight     = 730.0pt
+(typearea)              \topmargin      = -65.02966pt
+(typearea)              \headheight     = 15.0pt
+(typearea)              \headsep        = 18.0pt
+(typearea)              \topskip        = 10.0pt
+(typearea)              \footskip       = 42.0pt
+(typearea)              \baselineskip   = 12.0pt
 (typearea)              on input line 1485.
 )
 \c@part=\count80
@@ -376,21 +376,21 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 ) (./proposal.aux)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Info: Redefining \microtypecontext on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 91.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -425,8 +425,8 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count128
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 90.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 92.
+(lastpage)             ! on input line 91.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 93.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
@@ -446,48 +446,48 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 4.
 )
-Underfull \hbox (badness 1132) in paragraph at lines 8--8
-[][]|\OT1/cmr/m/it/10 (+20) Code snip-pet from an im-ple-men-ta-tion of
- []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./problem-statement.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+}
 
 
 
-])
-(./problem-statement.tex) (./related-work-approach.tex) (./approach.tex)
-(./logistics-infra.tex
+]) (./related-work-approach.tex) (./approach.tex) (./logistics-infra.tex
 
 LaTeX Warning: Reference `parboil-benchmark-suite' on page 2 undefined on input
  line 5.
 
-[2]
 
-LaTeX Warning: Reference `gpgpu-sim' on page 3 undefined on input line 9.
-
-
-LaTeX Warning: Reference `sesc-simulator' on page 3 undefined on input line 13.
+LaTeX Warning: Reference `gpgpu-sim' on page 2 undefined on input line 9.
 
 
+Underfull \hbox (badness 1337) in paragraph at lines 9--11
+\OT1/cmr/m/n/10 (+20) sim-u-la-tor now in-cludes an in-te-grated en-ergy model
+ []
 
-LaTeX Warning: Reference `rodinia-benchmark-suite' on page 3 undefined on input
+
+LaTeX Warning: Reference `sesc-simulator' on page 2 undefined on input line 13.
+
+
+
+LaTeX Warning: Reference `rodinia-benchmark-suite' on page 2 undefined on input
  line 16.
 
 ) (./bibliography.tex) 
 AED: lastpage setting LastPage
-[3
-
-] (./proposal.aux)
+[2] (./proposal.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -497,27 +497,29 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9186 strings out of 493089
- 142308 string characters out of 6140694
- 420512 words of memory out of 5000000
- 12459 multiletter control sequences out of 15000+600000
- 18255 words of font info for 86 fonts, out of 8000000 for 9000
+ 9175 strings out of 493089
+ 142158 string characters out of 6140694
+ 421423 words of memory out of 5000000
+ 12457 multiletter control sequences out of 15000+600000
+ 17386 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,47p,903b,1269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/sha
-re/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (3 pages, 131190 bytes).
+/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+</usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-di
+st/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
+helvetic/uhvro8a.pfb>
+Output written on proposal.pdf (2 pages, 147318 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  22017 words of extra memory for PDF output out of 24883 (max. 10000000)
 
