@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.26)  25 OCT 2015 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,11 +472,11 @@ Underfull \hbox (badness 1337) in paragraph at lines 9--11
 AED: lastpage setting LastPage
 [2] (./proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 9165 strings out of 493089
- 141884 string characters out of 6140694
+ 9175 strings out of 493089
+ 141970 string characters out of 6140694
  422429 words of memory out of 5000000
  12447 multiletter control sequences out of 15000+600000
- 16310 words of font info for 76 fonts, out of 8000000 for 9000
+ 16793 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,47p,767b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
@@ -490,7 +490,7 @@ ype1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-d
 ist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on proposal.pdf (2 pages, 147563 bytes).
+Output written on proposal.pdf (2 pages, 147126 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
