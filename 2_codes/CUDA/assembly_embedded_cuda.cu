@@ -14,6 +14,7 @@ __global__ void add_array(float* in_a, float* in_b, float* out_c, int N)
 {
 	int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
 	__asm__(
+		"nop"
 		"extrinsic:"
 	);
 	if(idx < N )
