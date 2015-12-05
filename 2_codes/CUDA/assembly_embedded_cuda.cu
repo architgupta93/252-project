@@ -13,23 +13,26 @@
 __global__ void add_array(float* in_a, float* in_b, float* out_c, int N)
 {
 	int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
-	__asm__(
-		"nop"
-		"extrinsic:"
-	);
+	__asm__("EXTRN:");
 	if(idx < N )
 	{
-		if(in_a[idx]<5)
+		__asm__("INTRN:");
+		if(idx < N/2)
 		{
 			out_c[idx] = in_a[idx] + in_b[idx];
+			__asm__("INTRN:");
+		}
+		else
+		{
+			out_c[idx] = in_b[idx] - in_a[idx];
 		}
 	}
 }
 
 int main(void)
 {
-	const int NUM_ELEMENTS = 10;
-	const int BLOCK_SIZE = 4;
+	const int NUM_ELEMENTS = 32;
+	const int BLOCK_SIZE = 32;
 	const int NUM_BLOCKS = (NUM_ELEMENTS/BLOCK_SIZE) + ((NUM_ELEMENTS%BLOCK_SIZE == 0) ? 0:1);
 	size_t FLOAT_ARRAY_SIZE = sizeof(float)*NUM_ELEMENTS;
 
@@ -45,17 +48,18 @@ int main(void)
 	cudaMalloc((void**) &d_c, FLOAT_ARRAY_SIZE);
 	
 	// Initializing data in the input arrays. Lets initialize
-	// a[i] = 2i+1;
-	// b[i] = i^2; 
+	// a[i] = 2i;
+	// b[i] = i^2+1; 
 	
 	for(int i=0; i<NUM_ELEMENTS; i++)
 	{
-		h_a[i] = (float) 2*i+1;
-		h_b[i] = (float) i*i;	
+		h_a[i] = (float) 2*i;
+		h_b[i] = (float) i*i+1;	
 	}
 
 	// We expect out function to produce 
-	// c[i] = (i+1)^2
+	// c[i] = (i+1)^2 if i<N/2
+	// c[i] = (i-1)^2 otherwise
 	
 	cudaMemcpy(d_a, h_a, FLOAT_ARRAY_SIZE, cudaMemcpyHostToDevice);
 	cudaMemcpy(d_b, h_b, FLOAT_ARRAY_SIZE, cudaMemcpyHostToDevice);
