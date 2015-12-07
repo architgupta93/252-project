@@ -31,8 +31,8 @@ __global__ void add_array(float* in_a, float* in_b, float* out_c, int N)
 
 int main(void)
 {
-	const int NUM_ELEMENTS = 32;
-	const int BLOCK_SIZE = 32;
+	const int NUM_ELEMENTS = 16;
+	const int BLOCK_SIZE = 16;
 	const int NUM_BLOCKS = (NUM_ELEMENTS/BLOCK_SIZE) + ((NUM_ELEMENTS%BLOCK_SIZE == 0) ? 0:1);
 	size_t FLOAT_ARRAY_SIZE = sizeof(float)*NUM_ELEMENTS;
 
