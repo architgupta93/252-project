@@ -16,16 +16,20 @@ __global__ void add_array(float* in_a, float* in_b, float* out_c, int N)
 	__asm__("EXTRN:");
 	if(idx < N )
 	{
+	//	__asm__("INTRN:");
+	//	if(idx < N/2)
+	//	{
+	//		out_c[idx] = in_a[idx] + in_b[idx];
+	//		__asm__("INTRN:");
+	//	}
+	//	else
+	//	{
+	//		out_c[idx] = in_b[idx] - in_a[idx];
+	//	}
 		__asm__("INTRN:");
-		if(idx < N/2)
-		{
-			out_c[idx] = in_a[idx] + in_b[idx];
-			__asm__("INTRN:");
-		}
-		else
-		{
-			out_c[idx] = in_b[idx] - in_a[idx];
-		}
+		__asm__("INTRN:");
+		out_c[idx] = (idx < N/2) ?in_a[idx] + in_b[idx] : in_a[idx] - in_b[idx];
+		
 	}
 }
 
