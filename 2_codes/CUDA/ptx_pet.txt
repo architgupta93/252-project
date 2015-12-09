@@ -1,0 +1,80 @@
+.version 3.0
+.target sm_20
+.address_size 64
+
+.file	1 "/tmp/tmpxft_00007275_00000000-7_assembly_embedded_cuda.cpp3.i"
+.file	2 "assembly_embedded_cuda.cu"
+
+.entry _Z9add_arrayPfS_S_i(
+.param .u64 _Z9add_arrayPfS_S_i_param_0,
+.param .u64 _Z9add_arrayPfS_S_i_param_1,
+.param .u64 _Z9add_arrayPfS_S_i_param_2,
+.param .u32 _Z9add_arrayPfS_S_i_param_3
+)
+{
+.reg .f32 %f<7>;
+.reg .pred %p<3>;
+.reg .s32 %r<16>;
+.reg .s64 %rl<11>;
+
+
+ld.param.u64 %rl7, [_Z9add_arrayPfS_S_i_param_0];
+ld.param.u64 %rl8, [_Z9add_arrayPfS_S_i_param_1];
+ld.param.u64 %rl9, [_Z9add_arrayPfS_S_i_param_2];
+ld.param.u32 %r1, [_Z9add_arrayPfS_S_i_param_3];
+cvta.to.global.u64 %rl1, %rl9;
+cvta.to.global.u64 %rl2, %rl8;
+cvta.to.global.u64 %rl3, %rl7;
+.loc 2 15 1
+mov.u32 %r3, %ntid.x;
+mov.u32 %r4, %ctaid.x;
+mov.u32 %r5, %tid.x;
+mad.lo.s32 %r2, %r3, %r4, %r5;
+
+	EXTRN:
+
+	.loc 2 17 1
+setp.lt.s32 %p1, %r2, %r1;
+@%p1 bra BB0_2;
+
+.loc 2 30 2
+ret;
+
+BB0_2:
+
+	INTRN:
+
+	ld.param.u32 %r15, [_Z9add_arrayPfS_S_i_param_3];
+.loc 2 20 1
+shr.u32 %r6, %r15, 31;
+add.s32 %r7, %r15, %r6;
+shr.s32 %r8, %r7, 1;
+setp.lt.s32 %p2, %r2, %r8;
+.loc 2 22 1
+mul.wide.s32 %rl10, %r2, 4;
+add.s64 %rl4, %rl2, %rl10;
+add.s64 %rl5, %rl3, %rl10;
+add.s64 %rl6, %rl1, %rl10;
+.loc 2 20 1
+@%p2 bra BB0_4;
+
+.loc 2 27 1
+ld.global.f32 %f1, [%rl4];
+ld.global.f32 %f2, [%rl5];
+sub.f32 %f3, %f1, %f2;
+st.global.f32 [%rl6], %f3;
+.loc 2 30 2
+ret;
+
+BB0_4:
+.loc 2 22 1
+ld.global.f32 %f4, [%rl5];
+ld.global.f32 %f5, [%rl4];
+add.f32 %f6, %f4, %f5;
+st.global.f32 [%rl6], %f6;
+
+	INTRN:
+
+	.loc 2 30 2
+ret;
+}
