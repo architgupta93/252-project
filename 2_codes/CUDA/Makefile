@@ -1,9 +1,9 @@
 CUDA_PATH :=/home/ag/local/cuda-4.2
 NVCC :=$(CUDA_PATH)/bin/nvcc
 
-NVCCOPTS :=-ccbin gcc-4.5.4
+NVCCOPTS :=-ccbin gcc-4.5.4 -m64
 ASM_OPTS :=-cubin
-SIM_OPTS :=-gencode arch=compute_13,code=compute_13
+SIM_OPTS :=-gencode arch=compute_20,code=compute_20
 
 SRC :=assembly_embedded_cuda
 

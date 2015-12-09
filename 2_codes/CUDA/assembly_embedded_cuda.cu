@@ -13,21 +13,19 @@
 __global__ void add_array(float* in_a, float* in_b, float* out_c, int N)
 {
 	int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
-	int wdx = threadIdx.x*threadIdx.x;
 	__asm__("EXTRN:");
-	__asm__("EXTRN:");
-	if(idx < N && wdx > 2)
+	if(idx < N)
 	{
-	//	__asm__("INTRN:");
-	//	if(idx < N/2)
-	//	{
+		__asm__("INTRN:");
+		if(idx < N/2)
+		{
 			out_c[idx] = in_a[idx] + in_b[idx];
-	//		__asm__("INTRN:");
-	//	}
-	//	else
-	//	{
-	//		out_c[idx] = in_b[idx] - in_a[idx];
-	//	}
+			__asm__("INTRN:");
+		}
+		else
+		{
+			out_c[idx] = in_b[idx] - in_a[idx];
+		}
 	}
 }
 
