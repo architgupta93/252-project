@@ -8,11 +8,58 @@
 	
 	\subsubsection*{Framework}	% Discuss the use of PTX (Why not PTXPlus, justifying
 					% the concept of a computational slot
+	GPGPU-Sim runs in two different modes: simulating Parallel Thread eXecution (PTX) and PTXPlus. PTX is a pseudo-assembly
+language used by Nvidia's CUDA Programming environment. Rather than being run directly on the machine, the driver recompiles the
+PTX into the native SASS implementation before execution. 
+PTXPlus is a pseudo-language specifically used to model the functioning of SASS ISA of the Nvidia GT200 series GPUs. PTXPlus extends
+the regular PTX by augmenting it with addressing modes, new instructions and data-types. The extension is a one-to-one map of most of
+ the instructions of the regular SASS. However, the exptension is only useful for a very limited range GPUs from Nvidia. 
+ 
+	We decided to use the PTX assembly code for our purposes:
+	\begin{itemize}
+	\item The PTX compiler is a stardard pseudo-assembly code for all CUDA kernels. The machine readable SASS changes with
+	the GPU family and may not be backward compatible. A PTX code, however, is embedded in the executable; a newer
+	family of processors may do a Just-in-Time(JIT) compilation to produce a machine-compatible code. 
+	\item Most of the hardware-specific optimizations such as rearrangements and predication of instrunctions are done on the 
+	recompiled PTX code. Hence, the PTX can be thought as a faithful reproduction of the high-level code in a lower-level
+	assembly construct.
+	\item The SASS translation of the High-level Control structures are very difficult to predict apriori. Since identifying
+	branches at the High-Level control structures is the only way, it is very difficult to trace these constructs to the
+	 machine code.
+	\item The GPGPU-Sim does not simulate the execution of the SASS code directly. Moreover, its PTXPlus infrastructure is only
+	compatible for a limited range of Nvidia GPU families. The PTXPlus also known to ignore certain SASS instructions, such as
+	those that modidy the SIMT Stack. 
+	\end{itemize}
+		
+	The practical difficuties as well as the inefficiencies of simulating the SASS were the main reasons for adopting PTX. However,
+	we are aware that PTX is not an accurate representation of the machine code. Its features are considerably high level and may be a serious problem in capturing low-level branch behaviour: it uses an arbitrarily large logical register set, and many individual insructions may be compounded into a single PTX operation. Hence, it is reasonable to expect significant difference in the behaviour of branches in a machine code.
 
 	\subsubsection*{Assumptions about the compiler}
 					% Put in the validation checks that were put in to
 					% ensure that only the correctly tagged benchmarks are
 					% evaluated
+	The procedure to tag the branches according to their nature in the program involves forming a trace from High-Level control
+	structures to branch instructions. This conversion generally occurs through several passes of optimizations by a compiler 
+	and finally the linker. Hence, the foundation of our framework was to pass identification marks that are preserved across
+	the compilation process. 
+	
+	We have used assembly-language labels as identification tokens. There are two kinds of labels for the two kinds of branches, and a branch inherits the nature of the label that immediately precedes it in program order. Once a label is paired to a branch, it is invalidated and is never used to identify another branch. We have modified the simulator so that a branch will not be accepted if it is not preceded my a valid label. In order to enforce the intended mapping of branches, we have developed the following assumptions to guarantee mapping correctness:
+		
+	\begin{itemize}
+	\begin{figure}
+		\lstinputlisting{for_teemplate.cc}
+		\caption{The template for a For-loop in C, a widely used HLC structure}
+		\label{fig:for_template}}
+	\end{figure}
+	\item The PTX code generated from the High-level Control structures (henceforth, HLC structures) preserve the order of the operations that appear in the distinct blocks within these HLC structures. As a collolary, any assembly-language label will also occur in the same order among its neighbouring instructions within a structure. During the extensive trials of this assumption, we discovered that the PTX code was not always a plain representation as we had expected. Several optimizations were done which were difficult to predict. Loop unrolling was the especially unpredictable as the error in the map depends on the extent of unrolling which is highly context-specific. We turned-off all compiler optimizations, and didn't observe any violations to our assumptions.
+
+	\item Any HLC structure has a definite character of being extrinsic or intrinsic. The branches that they produce inherit their nature. In some cases, we may not be able to clearly define the label of a high-level structure but can do so for each of its constituent branches. Since any HLC structure can be expressed as a control-flow graph or a decision tree with nodes representating binary decisions, it can always be expressed as a sequence of intrinsic or extrinsic branches by the nature of its nodes.
+
+	\item A given HLC structure has a definite pattern in which its constituent branch appears. Such a pattern will certainly be present in the assembly of the HLC structure, and will be a subset of any other branches that may be produced by the HLC structure. For instance, the two branches for the loop that appear immediately before and at the very end of the iteration body in \ref{fig:for_template} are compulsory. There may be additional branches too (such as, if the \textsl{<condition>} contains boolean expressions compounded by logical operations). This is because any HLC structure has a certain minimum representation as a decision tree, and its node there form the compulsory branches. A substitution of its nodes by any decision tree for a boolean expression does not remove these branches.
+
+	\item Assuming that we have correctly identified the compulsory patterns of all major HLC structures, if the number of static branches equal the number of branch labels, then our mapping is correct.
+ This assertion can be easily proved: our branch labels create a ordered partition of our program. If we have correctly identified compulsory patterns of all HLC structures in the code, then each partition will have atleast one branch and the first such branch in the program order will be preceded by a correctly-matched branch label. Therefore, as the premise says that labels equal branches, there is exactly one branch (correctly matched) in each partition. Hence, the mapping is correct. 
+\end{itemize}
 
 \subsection{Modifications to GPGPU-SIM}
 
