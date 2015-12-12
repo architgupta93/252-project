@@ -79,3 +79,39 @@ the regular PTX by augmenting it with addressing modes, new instructions and dat
 	\item OCCUPANCY -- Occupancy gives the average number of threads that were active immediately after the branch instruction was executed.\footnote{The initial idea was to characterize the branch instructions based on this value as well. However, we have left that as a future prospect due to the lack of data}
 	\item DYN COUNT -- It represents the total number of times some warp executed this particular branch instruction
 \end{itemize}
+
+	\subsubsection*{Thread status tables}
+	Thread status tables are used to evaluate the performance metric described in section \ref{sec:problem-description}. For every warp instruction being currently executed, thread status tables keep track of status of each thread in the warp. A warp can be marked as active if it is active in the current cycle. Otherwise, it is marked ``INACTIVE EXTRINSIC'' or ``INACTIVE INTRINSIC'', depending on the last branch instruction that deactivated the thread. Every time a warp diverges, the current status of all the threads is stored in a stack (simlar to the SIMT stack used for PDOM convergence in section \ref{sec:related-work}) and the new status is updated depending on the nature of the current branch. This can be best illustrated by an example. Let us consider the control flow graph shown in Figure \ref{fig:control-flow-graph}. We will discuss the update of thread status tables assuming that the branch at A (say an extrinsic branch) has been executed. Moreover, C is an intrisic branch. The execution proceeds as shown in Figure \ref{fig:control-flow-execution}.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+		\hline
+		PC	& Reconvergence	&	Thread	\\	
+		  	&	PC	&	status	\\
+		\hline
+		C	&		G&		E A A A \\
+		B	&		G&		A E E E \\
+		\hline
+\end{tabular}
+	\captionof{table}{Thread status tables implementing a stack structure to keep track of thread status values as threads diverge and converge subsequently. The stack grows downwards (B represents the current top of stack and will be executed next)
+		\label{table:thread-status-table-after-A}}
+\end{center}
+
+The thread status represents the status of threads when the respective basic block will be executed (A -- active, E -- deactivated by an extrinsic branch, I -- deactivated by an intrinsic branch). Basic block B will  executed first. Divergence at C leads to new entries being pushed into the stack, which gets updated to look like:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+		\hline
+		PC	& Reconvergence	&	Thread	\\	
+		  	&	PC	&	status	\\
+		\hline
+		B	&		G&		A E E E \\
+		D	&		F&		E A A I \\
+		E	&		F&		E I I A \\
+		\hline
+\end{tabular}
+	\captionof{table}{Thread status tables describing the threads immediately after branch at C is executed.
+		\label{table:thread-status-table-after-A}}
+\end{center}
+
+\par{One can readily see that the thread status table maintains the status of threads in a warp across the the various divergence/covergence events. Every instruction reads it thread status from the stack when it has been executed and updates the counts of respective status values. These values are then aggregated over all warps and reported to measure the performance impact}
