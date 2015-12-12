@@ -1,4 +1,32 @@
 %----------------------------------------------------------------------------------------
-%	CONCLUSION
+%	CONCLUSION and FUTURE SCOPE
 %----------------------------------------------------------------------------------------
 \label{sec:conclusion}
+\par{
+\textbf {Extrinsic branches seem to cause significant Inactivity.} The results from Section \ref{sec:results}
+, though not exhaustive, suggest that extrinsic branches may cause large inactivity in some benchmarks. However, it isn't clear
+that the inactivity is a result of the nature of such branches, or rather of inefficient programming
+practises. 
+
+While learning the algorithm in order to understand and label the HLC structures, we often
+came across extra branches in critical sections of the code (for example, in a very important function, 
+in the main iterative loop, or the core of the kernel algorithm) present just to support an extra queue
+or array that made the program easier to write. We believe such unnecessary branches hurt performance
+significantly, and can be easily removed (albeit making the code less readable and maintainable). 
+
+Hence, a natural extension of this project could be to grade extrinsic branches by the number of times they are 
+executed and their behaviour. These extrinsic branches may be further classified into those present in
+critical sections (often executing) and those used solely for setup or initialization. With such 
+classification we may be able to focus on the most offending types of such branches and explore the different solutions
+, both architectural and software, that could mitigate them.
+
+Another class of extrinsic branches that we encountered were those that are employed to run a large serial
+portion of a task between two heavily-parallel portion on the Kernel. Of the few cases that we saw, most of
+them were present to make the entire task run on the GPU. However, the serial portion often had no relation with
+the rest of the task, and could have exploited the ILP on a CPU much better than on a GPU. These branches,
+extrinsic for a very different reason, cannot be as clearly differentiated. Because a relatively small 
+serial code is faster as a part of the Kernel code: the time lost in memory transfer to or from the host (CPU)
+and the device (GPU) to start executing the next Kernel, may negate any benefit of running the serial part on the CPU.
+Hence, we believe more exploration could be done to understand the meaning of \textsl{extrinsic} and \textsl{intrinsic}
+in the huge variety of general-purpose GPU code that we have today.
+}
