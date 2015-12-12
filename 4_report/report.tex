@@ -34,7 +34,9 @@
 % *** MISC UTILITY PACKAGES ***
 %
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{listings}
+\usepackage{multicol}
 %\usepackage{ifpdf}
 % Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
 % compilation based on whether the output is pdf or dvi.
@@ -205,6 +207,7 @@ Email: sohumdatta@berkeley.edu}}
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
+
 \begin{abstract}
 The abstract goes here.
 \end{abstract}
@@ -267,8 +270,12 @@ The abstract goes here.
 %\caption{An Example of a Table}
 %\end{table}
 
+\section{Discussion}
+\input{discussion.tex}
+
 \section{Conclusion}
 \input{conclusion.tex}
+
 
 % conference papers do not normally have an appendix
 

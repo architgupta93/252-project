@@ -3,7 +3,7 @@
 %	OUR APPROACH
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\label{sec:our-approach}
 \subsection{Tagging CUDA Benchmarks}
 	
 	\subsubsection*{Framework}	% Discuss the use of PTX (Why not PTXPlus, justifying
@@ -62,4 +62,20 @@ the regular PTX by augmenting it with addressing modes, new instructions and dat
 \end{itemize}
 
 \subsection{Modifications to GPGPU-SIM}
+	\subsubsection*{Branch target buffers}
+	\begin{figure*}
+		\lstinputlisting[language={}]{backprop.log}
+		\caption{Some of the fields in the branch target buffer implemented in GPGPU-SIM
+			\label{fig:btb-example}}
+	\end{figure*}
+	\par{In order to accommodate some of the metrics that we wish to measure, we had to make a few changes to the existing GPGPU-SIM architecture. Besides measuring the performance impact of branch instructions (as mentioned in section \ref{sec:problem-description}), we are also interested in knowing if extrinsic and intrinsic branches have characteristically different behavior. In order to measure this, we implemented branch target buffers (BTB) in GPGPU-SIM. Each shader core has its own BTB. Any branch instruction that is executed at least once reserves an entry in its shader's BTB. Since the branch instructions (static count) are few in number and we are doing a software simulation, it is fairly easy to maintain a BTB which can grow dynamically in size (unlike a practical hardware implementation, which would have a fixed size). Figure \ref{btb-example} shows the BTB resulting from the execution of the ``backprop'' algorithm from RODINIA benchmark suite. The different columns of the BTB are described below}
 
+\begin{itemize}
+	\item PC -- Program counter for the branch instruction
+	\item TYPE -- This field can take two values. 'ext', implying that the branch is an extrinsic branch and 'int', implying that the branch is an intrnsic branch 
+	\item TARGET -- The program counter to which the branch instruction jumps
+	\item INSTANCES -- Every thread that was active when the branch instruction was encountered by the warp add 1 to the instances field
+	\item TAKEN -- Of the threads that were active when the branch instruction was encountered, `TAKEN' represents the fraction of threads that took the branch
+	\item OCCUPANCY -- Occupancy gives the average number of threads that were active immediately after the branch instruction was executed.\footnote{The initial idea was to characterize the branch instructions based on this value as well. However, we have left that as a future prospect due to the lack of data}
+	\item DYN COUNT -- It represents the total number of times some warp executed this particular branch instruction
+\end{itemize}
