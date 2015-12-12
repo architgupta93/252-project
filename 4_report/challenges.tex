@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	CHALLENGES FACED
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:challenges}
+
+\begin{itemize}
+Throughout the course of this project, we faced several difficulties which 
+shaped the course of our work:
+\item The greatest challenge faced by us was to ensure the intended mapping
+of branches into intrinsic and extrinsic. Though we had labelled much more 
+benchmarks, the number of static branches didn't equal the number of labels for most of them.
+Most of the time we encountered compounded boolean statements which did not assemble to branches
+predictably. We believe the compiler's decisions on cost-analysis of merging two or more branches
+was the most difficult thing to predict, and we were unable to get many benchmarks which could
+agree with all our assumptions. Notably, none of the benchmarks that we tagged in \cite{parboil-benchmark-suite}
+agreed with our assumptions. Therefore, we were compelled to chose our Benchmarks from
+an entirely different suite than the one we had planned.
+\item We lost a considerable time struggling to understand the code written in benchmark applications. 
+We believe a valuable amount of time was lost simply trying
+to understand the meaning of variables and functions, which could be easily avoided 
+by profuse comments and explanations.
+\item Our initial plan was to instrument the CPU code of the relevant benchmarks, identify
+their branches as intrinsic and extrinsic, and compare their behaviour with those observed
+in our GPU simulations. Our aim was to investigate whether intrinsic HLC structures were similar
+in both GPU and CPU. However, we couldn't figure out a way to preserve our branch identification tokens
+across the compilation processes. Branches from library functions or inlining of conditionals
+would make even the simplest HLC structures unpredictable.
+
+\end{itemize}
+
