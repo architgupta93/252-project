@@ -2,3 +2,35 @@
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
+\label{sec:introduction}
+\par{
+	Graphics processing units (GPUs) are increasingly being used for various compute-intensive tasks like modelling mechanical systems, matrix manipulations, image processing, neural networks etc. Owing to the availability of a large number of parallel resources, on certian data-parallel applications, they can achieve a performance which is orders of magnitude higher than a conventional CPU.
+}
+
+\par{
+	However, this gain in performance is one side of a trade off. Since GPUs were originally designed to perform graphics manipulations, which are inherently data parallel, the performance of similar applications on a GPU results in significantly better performance as compared to a CPU. The flip side of the trade off is the loss of generality. General purpose CPUs are equipped with accurate branch prediction, Out of Order (OoO) cores, multi-level caches etc. in order to extract the maximum possible amount of instruction level parallelism (ILP) and to mitigate the performance hit that might arise from complicated control flow or poor spatial locality of data in the programs. On a GPU operating on a similar power/energy budget, these resources are reallocated to provide several, but extremely simple (almost bare) pipelines. This is done, assuming that the programs that run on this machine will exhibit a staggering amount of data parallelism.
+}
+
+\begin{center}
+	\begin{tabular}{|l|c|c|}
+	\hline
+			&	Intel Xeon 		& NVIDIA Quadro \\
+			&	E5-1660			& M4000 \\
+	\hline
+	Max power 	&	130 W			& 120 W \\
+	Total Cores		&	6			& 1664 \\
+	Clock Frequency &	3.3 GHz			& 773 MHz \\
+	Memory Bandwidth&	51.2 GB/s		& 192 GB/s \\
+	Price		&	\$1089			& \$931 \\
+	\hline
+	\end{tabular}
+	\captionof{table}{Comparing the state-of-art CPU and GPU available with similar power budgets and price range
+		\label{table:cpu-gpu-compare}}
+\end{center}
+
+\par{
+	Table \ref{table:cpu-gpu-compare} shows us some of the architectural features of a CPU and a GPU having a very similar power budget and lying in the same price range. The availability of such a vast number of computing resources has pushed a lot of general purpose programs onto a GPU. However, since these general purpose programs are not perfectly aligned with the GPU's model of execution, they are not able to fully utilize the computational resources that are available on the GPU.
+}
+
+\par{The focus of the research community in computer architecture has been directed towards making changes in the GPU architecture which let it acomodate a wider set of general purpose applications without affecting its internal structure significantly. In this paper, we discuss the ways in which a general purpose application is mapped onto a GPU. Moreover, this mapping leads to some overheads (in terms of dynamic instruction count, control hazards etc.) which degrade the overall performance of the GPU. We try to measure this performance loss that arises from mapping general purpose applications onto a GPU.
+}

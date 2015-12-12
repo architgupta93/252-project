@@ -1,9 +1,19 @@
-pdf:
-	pdflatex report.tex
+FILE=report
+SHELL=/bin/bash
+TIMEDATESTR=`date +%Y-%m-%d--%H%M`
 
-pristine:
-	rm -f *.pdf	
-	rm -f *.nav *.log *.aux
+pdf:$(FILE).tex
+	pdflatex $<
+	#bibtex $(FILE)
+	#pdflatex $<
+
+copy:
+	pdflatex $(FILE).tex
+	mv $(FILE).pdf "$(TIMEDATESTR)-$(FILE)".pdf
 
 clean:
-	rm -f *.nav *.log *.aux
+	rm -f *.aux *.nav $(FILE)*.log
+
+pristine:
+	rm -f $(FILE)*.pdf
+	rm -f *.aux *.nav $(FILE)*.log 

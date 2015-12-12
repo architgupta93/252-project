@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	MOTIVATION
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{sec:motivation}
+\begin{figure}
+	\lstinputlisting{vector_dot_product.cc}
+	\caption{CPU code for the dot product of two vectors $\vec{a}$ and $\vec{b}$, which are stored in the float arrays \textbf{a} and \textbf{b} respectively
+		\label{fig:cpu_vector_dot_code}}
+\end{figure}
+\par{In order to demonstrate the problems that arise in mapping a general-purpose application onto a GPU, let us consider an example problem. Figure \ref{fig:cpu_vector_dot_code} shows a sample program implementing the dot product of two vectors $\vec{a}$ and $\vec{b}$. The product of the individual components of the two vectors is a parallelizable segment in the program, whereas the reduction sum is inherently serial. Vector dot products are fairly common in a lot of scientific programs like solving linear systems of equations, clustering etc.}
+
+\par{To map this problem onto a GPU (or any machine which is capable of extracting data level parallelism, we need to parallelize the parallel segment of the program and execute the serial part as is. GPUs today act as hardware accelerators and not standalone processors themselves. A CPU is responsible for setting up the data and instructions in the GPU memory and signalling the GPU to initialize computation. The serial segment can be executed in two ways 1) On the CPU - This involves a significant amount of overhead as some of the data has to be transferred between the CPU and the GPU as each of them has an independent memory subsystem. 2) On the GPU, as a part of the execution \textit{kernel}.}
+
+\begin{figure}
+	\centering
+	\lstinputlisting{vector_dot_product.cu}
+	\caption{GPU kernel code for the dot product of two vectors $\vec{a}$ and $\vec{b}$, which are stored in float arrays \textbf{a} and \textbf{b} respectively. \textbf{c} is used for local computation and helps in parallelizing the computation
+		\label{fig:gpu_vector_dot_code}}
+\end{figure}
+
+\par{
+	A GPU \textit{kernel} is a stream of instructions, which is executed in one computational unit. Since the kernel is designed to run on all the compute units in parallel, running the serial segement inside the kernel involves disabling all-but-one compute units when the serial segment is being executed.
+}
