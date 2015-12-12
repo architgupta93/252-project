@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{rodinia-benchmark-suite}
+S.~Che {\em et~al.}, ``Rodinia: A benchmark suite for heterogeneous
+  computing,'' in {\em Workload Characterization, 2009. IISWC 2009. IEEE
+  International Symposium on}, pp.~44--54, IEEE, 2009.
+
+\bibitem{gpgpu-sim}
+A.~Bakhoda {\em et~al.}, ``Analyzing cuda workloads using a detailed gpu
+  simulator,'' in {\em Performance Analysis of Systems and Software, 2009.
+  ISPASS 2009. IEEE International Symposium on}, pp.~163--174, IEEE, 2009.
+
+\bibitem{fung-micro}
+W.~W. Fung {\em et~al.}, ``Dynamic warp formation and scheduling for efficient
+  gpu control flow,'' in {\em Proceedings of the 40th Annual IEEE/ACM
+  International Symposium on Microarchitecture}, pp.~407--420, IEEE Computer
+  Society, 2007.
+
+\end{thebibliography}

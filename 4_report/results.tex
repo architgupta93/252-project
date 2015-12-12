@@ -3,7 +3,7 @@
 %	RESULTS
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\label{sec:results}
 \subsection{Static/Dynamic branch counts}
 \begin{figure*}
 	\hspace{-1.5cm}
@@ -21,7 +21,7 @@
 	\caption{Distribution of the number of branches encountered in different benchmarks
 		\label{fig:static-dynamic-distribution-plot}}
 \end{figure*}
-	Figure \ref{fig:static-dynamic-distribution-plot} shows the distribution of intrinsic and extrinsic branch instructions in terms of their static and dynmaic counts. Static counts are measured by analyzing the compiled ptx code, whereas, the dynamic count is obtained from the branch target buffer shown in Figure \ref{fig:btb-example}.
+	Figure \ref{fig:static-dynamic-distribution-plot} shows the distribution of intrinsic and extrinsic branch instructions in terms of their static and dynamic counts. Static counts are measured by analyzing the compiled PTX code, whereas, the dynamic count is obtained from the branch target buffer shown in Figure \ref{fig:btb-example}.
 
 \subsection{Performance impact}
 \begin{figure}
@@ -30,7 +30,7 @@
 	\caption{Percentage of computational slots wasted by the two categories of branch instructions
 		\label{fig:computational-slots-wasted}}
 \end{figure}
-As described in Sections \ref{sec:problem-description} and \ref{sec:our-approach}, for each ptx instruction, we measure the total number of slots that were 1. Active, 2. Inactive due to an intrinsic branch and 3. Inactive due to an extrinsic branch. Finally, for any benchmark, we evaluate the aggregate of these metrics over the entire period of time when the benchmark was running. In Figure \ref{fig:computational-slots-wasted}, we report the fraction of total available slots that were wasted due to intrinsic and extrinsic branches respectively.
+As described in Sections \ref{sec:problem-description} and \ref{sec:our-approach}, for each PTX instruction, we measure the total number of slots that were 1. Active, 2. Inactive due to an intrinsic branch and 3. Inactive due to an extrinsic branch. Finally, for any benchmark, we evaluate the aggregate of these metrics over the entire period of time when the benchmark was running. In Figure \ref{fig:computational-slots-wasted}, we report the fraction of total available slots that were wasted due to intrinsic and extrinsic branches respectively.
 
 \subsection{Branch characteristics}
 \begin{figure}

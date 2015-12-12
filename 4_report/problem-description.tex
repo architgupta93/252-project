@@ -10,7 +10,7 @@ Any implentation of an algorithm on CPU, GPU etc. requires a control flow graph 
 	Some of the branches in a particular implementation of a program arise because of the limitations of the device. The branch arising from running the reduction sum on a single kernel in section \ref{sec:motivation} is one such branch. The limitation that forces us to use this branch is the fact that all the compute units in a GPU are bound to execute the same kernel. These branches have been referred to as \textit{extrinsic} branches.
 
 \par{
-	Our definitions imply that extrinsic and intrinsic branches are present in both GPU and CPU implementations of a program. The parallel segments of programs are generally implemented as loops in a CPU implementation, leading to branch instructions. These branches will also be called extrinsic as they are not dictated by the algorithm but are a result of the CPU's limitation of beng inherently serial.
+	Our definitions imply that extrinsic and intrinsic branches are present in both GPU and CPU implementations of a program. The parallel segments of programs are generally implemented as loops in a CPU implementation, leading to branch instructions. These branches will also be called extrinsic as they are not dictated by the algorithm but are a result of the CPU's limitation of being inherently serial.
 }
 
 \begin{figure}
@@ -21,10 +21,10 @@ Any implentation of an algorithm on CPU, GPU etc. requires a control flow graph 
 \end{figure}
 
 \subsection*{Estimating Performance impact}
-\par{In section \ref{sec:branch-divergence-description}, we saw that branch instructions lead to a unique problem called branch divergence on a GPU. Since we have categorized branches into two categories, we wil calculate the performance impact of each of the two categories based on branch divergence. Continuing on our sample control flow graph in Figure \ref{fig:control-flow-graph}, let's say that the branch at A is an EXTRINSIC branch and the branch at C is an INTRINSIC branch. Because of its lock-step execution, at each cycle, all the threads execute the same basic block. Figure \ref{fig:control-flow-execution} shows the sequence of basic blocks and the active threads in each execution block in the GPU.}
-\par{We can think of each bit in the execution flow to be a copmutational slot. Slot (or thread) 1 is deactivated by the branch at A and it remains deactivated when the GPU is executing basic blocks C, D, E, F. Also, the branch at A deactivates slot 2, 3 and 4 when the GPU is executing basic block B. Similarly, we can see that the branch at B deactivates slot 4 when D is being executed and slots 2 and 3 when E is being executed.
+\par{In section \ref{sec:branch-divergence-description}, we saw that branch instructions lead to a unique problem called branch divergence on a GPU. Since we have categorized branches into two categories, we will calculate the performance impact of each of the two categories based on branch divergence. Continuing on our sample control flow graph in Figure \ref{fig:control-flow-graph}, let's say that the branch at A is an EXTRINSIC branch and the branch at C is an INTRINSIC branch. Because of its lock-step execution, at each cycle, all the threads execute the same basic block. Figure \ref{fig:control-flow-execution} shows the sequence of basic blocks and the active threads in each execution block in the GPU.}
+\par{We can think of each bit in the execution flow to be a computational slot. Slot (or thread) 1 is deactivated by the branch at A and it remains deactivated when the GPU is executing basic blocks C, D, E, and F. Also, the branch at A deactivates slot 2, 3 and 4 when the GPU is executing basic block B. Similarly, we can see that the branch at B deactivates slot 4 when D is being executed and slots 2 and 3 when E is being executed.
 }
-\par{For the sake of simplicity, let us assume that each basic block has the same length, equal to 1 (it is trivial to accomodate different basic block sizes. We are making simplifying assumptions for the sake of illustration). Let us compute the fraction of total available slots that were:}
+\par{For the sake of simplicity, let us assume that each basic block has the same length, equal to 1 (it is trivial to accommodate different basic block sizes. We are making simplifying assumptions for the sake of illustration). Let us compute the fraction of total available slots that were:}
 \begin{enumerate}
 	\item Active $(f_{A})$
 	\item Inactive due to an extrinsic branch $(f_{E_i})$
@@ -36,4 +36,4 @@ Any implentation of an algorithm on CPU, GPU etc. requires a control flow graph 
 	f_{E_{i}} 	&= \frac{7}{28} 	= 0.25 \\
 	f_{I_{i}} 	&= \frac{3}{28} 	= 0.11
 \end{align*}
-We can see that, in this case, 25\% slots are wasted because of the presence of an extrisic branch. In the upcoming sections, we will discuss the framework for applying this metric to a set of real word problems and present our findings.
+We can see that, in this case, 25\% slots are wasted because of the presence of an extrisinc branch. In the upcoming sections, we will discuss the framework for applying this metric to a set of real word problems and present our findings.

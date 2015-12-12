@@ -4,8 +4,8 @@ TIMEDATESTR=`date +%Y-%m-%d--%H%M`
 
 pdf:$(FILE).tex
 	pdflatex $<
-	#bibtex $(FILE)
-	#pdflatex $<
+	bibtex $(FILE)
+	pdflatex $<
 
 copy:
 	pdflatex $(FILE).tex
