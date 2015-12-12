@@ -3,7 +3,7 @@
 %	OUR APPROACH
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\label{sec:our-approach}
 \subsection{Tagging CUDA Benchmarks}
 	
 	\subsubsection*{Framework}	% Discuss the use of PTX (Why not PTXPlus, justifying
@@ -47,9 +47,9 @@ the regular PTX by augmenting it with addressing modes, new instructions and dat
 		
 	\begin{itemize}
 	\begin{figure}
-		\lstinputlisting{for_teemplate.cc}
-		\caption{The template for a For-loop in C, a widely used HLC structure}
-		\label{fig:for_template}}
+		\lstinputlisting{for_template.cc}
+		\caption{The template for a For-loop in C, a widely used HLC structure
+			\label{fig:for_template}}
 	\end{figure}
 	\item The PTX code generated from the High-level Control structures (henceforth, HLC structures) preserve the order of the operations that appear in the distinct blocks within these HLC structures. As a collolary, any assembly-language label will also occur in the same order among its neighbouring instructions within a structure. During the extensive trials of this assumption, we discovered that the PTX code was not always a plain representation as we had expected. Several optimizations were done which were difficult to predict. Loop unrolling was the especially unpredictable as the error in the map depends on the extent of unrolling which is highly context-specific. We turned-off all compiler optimizations, and didn't observe any violations to our assumptions.
 
@@ -62,4 +62,56 @@ the regular PTX by augmenting it with addressing modes, new instructions and dat
 \end{itemize}
 
 \subsection{Modifications to GPGPU-SIM}
+	\subsubsection*{Branch target buffers}
+	\begin{figure*}
+		\lstinputlisting[language={}]{backprop.log}
+		\caption{Some of the fields in the branch target buffer implemented in GPGPU-SIM
+			\label{fig:btb-example}}
+	\end{figure*}
+	\par{In order to accommodate some of the metrics that we wish to measure, we had to make a few changes to the existing GPGPU-SIM architecture. Besides measuring the performance impact of branch instructions (as mentioned in section \ref{sec:problem-description}), we are also interested in knowing if extrinsic and intrinsic branches have characteristically different behavior. In order to measure this, we implemented branch target buffers (BTB) in GPGPU-SIM. Each shader core has its own BTB. Any branch instruction that is executed at least once reserves an entry in its shader's BTB. Since the branch instructions (static count) are few in number and we are doing a software simulation, it is fairly easy to maintain a BTB which can grow dynamically in size (unlike a practical hardware implementation, which would have a fixed size). Figure \ref{btb-example} shows the BTB resulting from the execution of the ``backprop'' algorithm from RODINIA benchmark suite. The different columns of the BTB are described below}
 
+\begin{itemize}
+	\item PC -- Program counter for the branch instruction
+	\item TYPE -- This field can take two values. 'ext', implying that the branch is an extrinsic branch and 'int', implying that the branch is an intrnsic branch 
+	\item TARGET -- The program counter to which the branch instruction jumps
+	\item INSTANCES -- Every thread that was active when the branch instruction was encountered by the warp add 1 to the instances field
+	\item TAKEN -- Of the threads that were active when the branch instruction was encountered, `TAKEN' represents the fraction of threads that took the branch
+	\item OCCUPANCY -- Occupancy gives the average number of threads that were active immediately after the branch instruction was executed.\footnote{The initial idea was to characterize the branch instructions based on this value as well. However, we have left that as a future prospect due to the lack of data}
+	\item DYN COUNT -- It represents the total number of times some warp executed this particular branch instruction
+\end{itemize}
+
+	\subsubsection*{Thread status tables}
+	Thread status tables are used to evaluate the performance metric described in section \ref{sec:problem-description}. For every warp instruction being currently executed, thread status tables keep track of status of each thread in the warp. A warp can be marked as active if it is active in the current cycle. Otherwise, it is marked ``INACTIVE EXTRINSIC'' or ``INACTIVE INTRINSIC'', depending on the last branch instruction that deactivated the thread. Every time a warp diverges, the current status of all the threads is stored in a stack (simlar to the SIMT stack used for PDOM convergence in section \ref{sec:related-work}) and the new status is updated depending on the nature of the current branch. This can be best illustrated by an example. Let us consider the control flow graph shown in Figure \ref{fig:control-flow-graph}. We will discuss the update of thread status tables assuming that the branch at A (say an extrinsic branch) has been executed. Moreover, C is an intrisic branch. The execution proceeds as shown in Figure \ref{fig:control-flow-execution}.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+		\hline
+		PC	& Reconvergence	&	Thread	\\	
+		  	&	PC	&	status	\\
+		\hline
+		C	&		G&		E A A A \\
+		B	&		G&		A E E E \\
+		\hline
+\end{tabular}
+	\captionof{table}{Thread status tables implementing a stack structure to keep track of thread status values as threads diverge and converge subsequently. The stack grows downwards (B represents the current top of stack and will be executed next)
+		\label{table:thread-status-table-after-A}}
+\end{center}
+
+The thread status represents the status of threads when the respective basic block will be executed (A -- active, E -- deactivated by an extrinsic branch, I -- deactivated by an intrinsic branch). Basic block B will  executed first. Divergence at C leads to new entries being pushed into the stack, which gets updated to look like:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+		\hline
+		PC	& Reconvergence	&	Thread	\\	
+		  	&	PC	&	status	\\
+		\hline
+		B	&		G&		A E E E \\
+		D	&		F&		E A A I \\
+		E	&		F&		E I I A \\
+		\hline
+\end{tabular}
+	\captionof{table}{Thread status tables describing the threads immediately after branch at C is executed.
+		\label{table:thread-status-table-after-A}}
+\end{center}
+
+\par{One can readily see that the thread status table maintains the status of threads in a warp across the the various divergence/covergence events. Every instruction reads it thread status from the stack when it has been executed and updates the counts of respective status values. These values are then aggregated over all warps and reported to measure the performance impact}
